@@ -1,0 +1,56 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font_family_main: Avenir Next, Helvetica Neue, sans-serif;
+
+$color_lightblue: #BAE3F6;
+
+body {
+  background-color: $color_lightblue;
+}
+
+h1 {
+  font-family: $font_family_main;
+  font-size: 80px;
+  font-weight: 100;
+  text-align: center;
+}
+
+h2 {
+  font-family: $font_family_main;
+  font-size: 60px;
+  font-weight: 100;
+  text-align: center;
+}
+
+h3 {
+  font-family: $font_family_main;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+}
+
+div.instructions {
+  padding-top: 20px;
+  width: 650px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: $font_family_main;
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 800;
+  margin: 0 auto;
+}
+
+li {
+  margin: 20px 0;
+}
+
+.topimage {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
