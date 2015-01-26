@@ -38,4 +38,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # tfb added
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['BU_AWS_BUCKET'],
+    :access_key_id => ENV['BLOM_AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['BLOM_AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end

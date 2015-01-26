@@ -33,6 +33,17 @@ gem 'turbolinks'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'paperclip'
+gem 'aws-sdk'
+# for uploading to s3 via paperclip
+
+gem 'exifr', '~> 1.2.0'
+# for reading EXIF data from jpg photos to get at GPS coords
+
+gem 'geocoder'
+# for working with lat/long location data to support queries on distance etc.
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
