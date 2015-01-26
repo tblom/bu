@@ -1,0 +1,26 @@
+<%= form_for(@unicorn, url: 'unicorns/create', multipart: true) do |f| %>
+  <% if @unicorn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unicorn.errors.count, "error") %> prohibited this unicorn from being saved:</h2>
+
+      <ul>
+      <% @unicorn.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Share a unicorn' %>
+    <%= link_to 'Nevermind', root_path, class: 'button' %>
+  </div>
+<% end %>
