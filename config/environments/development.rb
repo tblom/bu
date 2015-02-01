@@ -45,7 +45,9 @@ Rails.application.configure do
   :s3_credentials => {
     :bucket => ENV['BU_AWS_BUCKET'],
     :access_key_id => ENV['BLOM_AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['BLOM_AWS_SECRET_ACCESS_KEY']
-    }
+    :secret_access_key => ENV['BLOM_AWS_SECRET_ACCESS_KEY'],
+    },
+  :url => ':s3_domain_url',
+  :path => '/:class/:attachment/:id_partition/:style/:filename'
   }
 end

@@ -6,8 +6,28 @@ $font_family_main: Avenir Next, Helvetica Neue, sans-serif;
 
 $color_lightblue: #BAE3F6;
 
+$light-red: #ffc0c0;
+$light-green: #c0ffc0;
+
 body {
+
   background-color: $color_lightblue;
+  margin: 0;
+  padding: 0;
+
+  .message {
+    padding: 40px;
+    text-align: center;
+    font-size: 140%;
+  }
+  .notice {
+    @extend .message;
+    background-color: $light-green;
+  }
+  .error {
+    @extend .message;
+    background-color: $light-red;
+  }
 }
 
 h1 {
@@ -53,4 +73,11 @@ li {
   max-width: 800px;
   text-align: center;
   margin: 0 auto;
+}
+
+.map {
+  position: absolute;
+  top:0; 
+  bottom:0;
+  width:100%;
 }

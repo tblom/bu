@@ -9,11 +9,12 @@ class UnicornsController < ApplicationController
 
     @unicorn = Unicorn.new(unicorn_params)
 
-    if @unicorn.save
+    if !@unicorn.latitude.blank? && @unicorn.save
       puts "UnicornsController::create POST save"
       redirect_to "/map?uid=#{@unicorn.id}"
     else
-      render action: 'new'
+      puts "*** redirecting, unicorn not saved ***"
+      redirect_to "/", notice: "The unicorn wasn't saved.  No GPS info in photo?"
     end
   end
 
