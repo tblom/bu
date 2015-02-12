@@ -7,14 +7,18 @@ $(function() {
 	L.mapbox.accessToken = 'pk.eyJ1IjoiYmxvbWNvZGUiLCJhIjoiMGIxemwzOCJ9.FRTGtI04ro2qbhsaEMdhtA';
 	var map = L.mapbox.map('map-one', 'blomcode.l00jcjh4');
 
-	var unicorns = <%= raw Unicorn.get_geojson.to_json %>;
+	var unicorns = <%= raw Unicorn.get_geojson(@server_address).to_json %>;
 
 	console.log( "unicorns is: ");
 	console.dir( unicorns );
 
 	var markerLayer = L.mapbox.featureLayer();
 	markerLayer.on( 'layeradd', function(e) {
-		e.layer.bindPopup( '<img src="' + e.layer.feature.properties.image_medium + '" />', {
+		var marker = e.layer;
+		var feature = marker.feature;
+
+		marker.setIcon( L.icon(feature.properties.icon) );
+		marker.bindPopup( '<img src="' + feature.properties.image_medium + '" />', {
 			minWidth: 350
 		});
 	});

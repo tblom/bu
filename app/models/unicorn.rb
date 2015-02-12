@@ -26,7 +26,7 @@ class Unicorn < ActiveRecord::Base
         puts "  gps: #{self.latitude}, #{self.longitude}"
     end
 
-    def self.get_geojson
+    def self.get_geojson server_url
         #
         # A first pass at wrapping up data we'll want to display unicorn markers on
         # map.  I'm using a simple GeoJSON structure because that is supported by MapBox.
@@ -53,10 +53,10 @@ class Unicorn < ActiveRecord::Base
                     # This following is not working...
                     #
                     icon: {
-                        iconUrl: ActionController::Base.helpers.asset_path("unicorn_icon.jpg"),
-                        iconSize: [50,58],
-                        iconAnchor: [25,0],
-                        popupAnchor: [0, -25 ],
+                        iconUrl: ActionController::Base.helpers.asset_path("unicorn_icon40x49.png"),
+                        iconSize: [40,49],
+                        iconAnchor: [20,25],
+                        popupAnchor: [-8,-18 ],
                         className: "dot"
                     }
 

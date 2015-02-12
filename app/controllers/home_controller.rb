@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def map
+  	@server_address = request.protocol + request.domain + ":" + request.port.to_s
   end
 
 end
