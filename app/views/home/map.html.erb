@@ -12,11 +12,14 @@ $(function() {
 	console.log( "unicorns is: ");
 	console.dir( unicorns );
 
-	var markerLayer = L.mapbox.featureLayer().on( 'layeradd', function(e) {
+	var markerLayer = L.mapbox.featureLayer();
+	markerLayer.on( 'layeradd', function(e) {
 		e.layer.bindPopup( '<img src="' + e.layer.feature.properties.image_medium + '" />', {
 			minWidth: 350
 		});
-	}).addTo( map );
+	});
+
+	markerLayer.addTo( map );
 
 	markerLayer.setGeoJSON( unicorns );
 

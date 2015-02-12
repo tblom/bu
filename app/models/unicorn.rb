@@ -44,13 +44,25 @@ class Unicorn < ActiveRecord::Base
                 properties: {
                     title: 'unicorn sighting',
                     description: 'blah blah',
-                    'marker-size' => 'large',
-                    'marker-color' => '#0000FF',
-                    'marker-symbol' => 'zoo',
+                    #'marker-size' => 'large',
+                    'marker-color' => '#329AF6',
+                    #'marker-symbol' => 'marker',
                     image_thumb: u.image.url(:thumb),
-                    image_medium: u.image.url(:medium)
+                    image_medium: u.image.url(:medium),
+                    #
+                    # This following is not working...
+                    #
+                    icon: {
+                        iconUrl: ActionController::Base.helpers.asset_path("unicorn_icon.jpg"),
+                        iconSize: [50,58],
+                        iconAnchor: [25,0],
+                        popupAnchor: [0, -25 ],
+                        className: "dot"
+                    }
+
                 }
             }
+            puts "  icon is: #{feature[:properties][:icon].inspect}"
             geojson[ :features ] << feature
         end
         geojson
