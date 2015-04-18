@@ -58,6 +58,9 @@
                                         <state key="normal" title="Map" image="Map Marker Icon">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="esR-Zc-ONO" kind="presentation" id="Tl0-bU-8nU"/>
+                                        </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzD-tz-LJG">
                                         <rect key="frame" x="448" y="25" width="152" height="50"/>
@@ -124,6 +127,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuP-jY-tEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="460"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="vnN-ax-QDg">
+            <objects>
+                <viewController id="esR-Zc-ONO" customClass="MapViewController" customModule="blueunicorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9rm-AL-mU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="afw-VG-U3N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sif-8c-HQm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-td-U6A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wHq-td-U6A" firstAttribute="top" secondItem="sif-8c-HQm" secondAttribute="top" id="DvX-vK-U6M"/>
+                            <constraint firstItem="wHq-td-U6A" firstAttribute="leading" secondItem="sif-8c-HQm" secondAttribute="leading" id="Ehb-uc-Zdd"/>
+                            <constraint firstItem="wHq-td-U6A" firstAttribute="bottom" secondItem="afw-VG-U3N" secondAttribute="top" id="NY7-qe-BXN"/>
+                            <constraint firstAttribute="trailing" secondItem="wHq-td-U6A" secondAttribute="trailing" id="ayT-pf-dnv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wHq-td-U6A" id="YBl-Pe-O1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Z2-RC-kea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="1159"/>
         </scene>
     </scenes>
     <resources>
