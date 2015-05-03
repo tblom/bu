@@ -17,7 +17,36 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+			let initialLocation = CLLocation(latitude: 30.248502, longitude: -97.752191)
+				// town lake, near lamar footbridge.
+			centerMapOnLocation( initialLocation );
+			
+			mapView.delegate = self
+			
+			HttpManager.getUnicornsWithSuccess( { (UnicornData) -> Void in
+				let json = JSON( data: UnicornData )
+				if let unicornArray = json["features"].array {
+					dispatch_async( dispatch_get_main_queue(), {
+						for unicorn in unicornArray {
+							var coordLon =  unicorn["geometry"]["coordinates"][0].double
+							var coordLat =  unicorn["geometry"]["coordinates"][1].double
+							
+							let unicornMapInfo = UnicornMapInfo ( title: unicorn["properties"]["title"].string!,
+								date: unicorn["properties"]["date"].string!, coordinate: CLLocationCoordinate2D( latitude: coordLat!, longitude: coordLon! ) )
+							
+							self.mapView.addAnnotation( unicornMapInfo );
+							println( "Added unicorn!" )
+						}
+					})
+				}
+			})
     }
+	
+		let regionRadius: CLLocationDistance = 4000
+		func centerMapOnLocation(location: CLLocation) {
+				let coordinateRegion = MKCoordinateRegionMakeWithDistance( location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+				mapView.setRegion(coordinateRegion, animated: true)
+		}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
