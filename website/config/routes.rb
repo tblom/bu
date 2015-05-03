@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'map', to: 'home#map'
   get 'upload', to: 'unicorns#new'
   post 'unicorns/create'
+  get 'api/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

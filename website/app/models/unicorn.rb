@@ -44,13 +44,15 @@ class Unicorn < ActiveRecord::Base
                 properties: {
                     title: 'unicorn sighting',
                     description: 'blah blah',
+                    date: u.created_at.strftime( "%m/%d/%Y" ),
                     #'marker-size' => 'large',
                     'marker-color' => '#329AF6',
                     #'marker-symbol' => 'marker',
                     image_thumb: u.image.url(:thumb),
                     image_medium: u.image.url(:medium),
                     #
-                    # This following is not working...
+                    # It seems wasteful to send down this same icon with every unicorn.  The map should
+                    # get this data once and reuse it.
                     #
                     icon: {
                         iconUrl: ActionController::Base.helpers.asset_path("unicorn_icon40x49.png"),
@@ -59,7 +61,6 @@ class Unicorn < ActiveRecord::Base
                         popupAnchor: [-8,-18 ],
                         className: "dot"
                     }
-
                 }
             }
             puts "  icon is: #{feature[:properties][:icon].inspect}"
