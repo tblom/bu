@@ -8,8 +8,8 @@
 
 import Foundation
 
-//let UnicornIndexURL = "http://www.blueunicorn.net/api/index"
-let UnicornIndexURL = "http://localhost:3000/api/index"
+let UnicornIndexURL = "http://www.blueunicorn.net/api/index"
+//let UnicornIndexURL = "http://localhost:3000/api/index"
 
 class HttpManager {
 	
