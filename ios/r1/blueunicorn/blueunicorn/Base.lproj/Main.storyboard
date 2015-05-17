@@ -41,6 +41,9 @@
                                         <state key="normal" title="Camera" image="Camera Icon">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="pUd-86-dtY" kind="presentation" id="cy8-Hd-0at"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-hh-4oj">
                                         <rect key="frame" x="376" y="11" width="72" height="72"/>
@@ -127,7 +130,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuP-jY-tEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="460"/>
+            <point key="canvasLocation" x="83" y="416"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="3Lj-Id-xqD">
+            <objects>
+                <viewController id="pUd-86-dtY" customClass="CameraViewController" customModule="blueunicorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F9s-PB-fO9"/>
+                        <viewControllerLayoutGuide type="bottom" id="EIq-Ga-BGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UBs-1z-ZKl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ft3-FI-zcM" userLabel="BackBar">
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-yd-2M3">
+                                        <rect key="frame" x="20" y="8" width="42" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="PZk-G9-3fB"/>
+                                        </constraints>
+                                        <state key="normal" title="BACK">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="4ko-HB-99j" kind="unwind" unwindAction="unwindToViewController:" id="T4p-tz-Oz9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4Gl-yd-2M3" secondAttribute="bottom" constant="2" id="Eum-5n-mCK"/>
+                                    <constraint firstAttribute="height" constant="40" id="PMa-3P-y1x"/>
+                                    <constraint firstItem="4Gl-yd-2M3" firstAttribute="leading" secondItem="ft3-FI-zcM" secondAttribute="leading" constant="20" id="lfu-QF-8pz"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-je-YGS">
+                                <rect key="frame" x="0.0" y="60" width="600" height="440"/>
+                                <color key="backgroundColor" red="0.79020910519999998" green="1" blue="0.81802304969999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j08-zl-rQa" userLabel="BottomBar">
+                                <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYa-fe-0sr">
+                                        <rect key="frame" x="258" y="0.0" width="84" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="hFP-2g-kKT"/>
+                                        </constraints>
+                                        <state key="normal" image="CameraButton">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-r7-rhs">
+                                        <rect key="frame" x="32" y="35" width="87" height="30"/>
+                                        <state key="normal" title="Camera Roll">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="F0S-r7-rhs" secondAttribute="centerY" id="8VM-vU-dEN"/>
+                                    <constraint firstItem="F0S-r7-rhs" firstAttribute="leading" secondItem="j08-zl-rQa" secondAttribute="leading" constant="10" id="Alz-yx-rBN"/>
+                                    <constraint firstAttribute="centerX" secondItem="sYa-fe-0sr" secondAttribute="centerX" id="HDt-bu-lOR"/>
+                                    <constraint firstAttribute="height" constant="100" id="Jre-IP-EMk"/>
+                                    <constraint firstAttribute="centerY" secondItem="sYa-fe-0sr" secondAttribute="centerY" id="nKq-Ah-FKg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j08-zl-rQa" firstAttribute="leading" secondItem="UBs-1z-ZKl" secondAttribute="leadingMargin" constant="-16" id="6Rd-U8-D60"/>
+                            <constraint firstItem="ft3-FI-zcM" firstAttribute="leading" secondItem="UBs-1z-ZKl" secondAttribute="leading" id="EUI-9W-QXF"/>
+                            <constraint firstItem="j08-zl-rQa" firstAttribute="width" secondItem="UBs-1z-ZKl" secondAttribute="width" id="JS3-Ml-QC3"/>
+                            <constraint firstItem="DcP-je-YGS" firstAttribute="bottom" secondItem="j08-zl-rQa" secondAttribute="top" id="OiQ-Vk-m5t"/>
+                            <constraint firstItem="DcP-je-YGS" firstAttribute="width" secondItem="UBs-1z-ZKl" secondAttribute="width" id="Qov-3X-mu3"/>
+                            <constraint firstItem="DcP-je-YGS" firstAttribute="top" secondItem="ft3-FI-zcM" secondAttribute="bottom" id="SWj-WO-lu9" userLabel="Vertical Space - (58) - View - Image View"/>
+                            <constraint firstItem="ft3-FI-zcM" firstAttribute="top" secondItem="F9s-PB-fO9" secondAttribute="bottom" id="ile-dv-8vv"/>
+                            <constraint firstItem="j08-zl-rQa" firstAttribute="bottom" secondItem="EIq-Ga-BGQ" secondAttribute="top" id="tQY-WJ-s3g"/>
+                            <constraint firstItem="ft3-FI-zcM" firstAttribute="centerX" secondItem="DcP-je-YGS" secondAttribute="centerX" id="uHC-nY-6IZ"/>
+                            <constraint firstItem="ft3-FI-zcM" firstAttribute="width" secondItem="UBs-1z-ZKl" secondAttribute="width" id="xYc-AJ-iQ5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Hd-VW-8Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4ko-HB-99j" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="416"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vnN-ax-QDg">
@@ -188,6 +280,7 @@
     </scenes>
     <resources>
         <image name="Camera Icon" width="58" height="50"/>
+        <image name="CameraButton" width="84" height="84"/>
         <image name="Map Marker Icon" width="38" height="51"/>
         <image name="UnicornVector Cover" width="287" height="304"/>
     </resources>

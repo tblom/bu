@@ -12,6 +12,7 @@
 		E91EB5141AF6703400FD4317 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EB5131AF6703400FD4317 /* HttpManager.swift */; };
 		E91EB5181AF68A3100FD4317 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EB5171AF68A3100FD4317 /* SwiftyJSON.swift */; };
 		E91EB51A1AF6B6FF00FD4317 /* unicorn_icon40x49.png in Resources */ = {isa = PBXBuildFile; fileRef = E91EB5191AF6B6FF00FD4317 /* unicorn_icon40x49.png */; };
+		E9215B751B068BEA00379D36 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9215B741B068BEA00379D36 /* CameraViewController.swift */; };
 		E927907F1AE1E5370025DFD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927907E1AE1E5370025DFD5 /* MapViewController.swift */; };
 		E94213851AE1438C004CF905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94213841AE1438C004CF905 /* AppDelegate.swift */; };
 		E94213881AE1438C004CF905 /* blueunicorn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E94213861AE1438C004CF905 /* blueunicorn.xcdatamodeld */; };
@@ -67,6 +68,7 @@
 		E91EB5131AF6703400FD4317 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		E91EB5171AF68A3100FD4317 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E91EB5191AF6B6FF00FD4317 /* unicorn_icon40x49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unicorn_icon40x49.png; sourceTree = "<group>"; };
+		E9215B741B068BEA00379D36 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E927907E1AE1E5370025DFD5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E942137F1AE1438C004CF905 /* blueunicorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blueunicorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94213831AE1438C004CF905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				E94213841AE1438C004CF905 /* AppDelegate.swift */,
 				E91EB5131AF6703400FD4317 /* HttpManager.swift */,
 				E94213891AE1438C004CF905 /* ViewController.swift */,
+				E9215B741B068BEA00379D36 /* CameraViewController.swift */,
 				E927907E1AE1E5370025DFD5 /* MapViewController.swift */,
 				E91EB5111AF66B2400FD4317 /* MapViewAnnotation.swift */,
 				E91EB50F1AF5BEB200FD4317 /* UnicornMapInfo.swift */,
@@ -351,6 +354,7 @@
 				E9707FE21AF72A94003372E2 /* DesignableTextField.swift in Sources */,
 				E9707FE41AF72A94003372E2 /* DesignableView.swift in Sources */,
 				E9707FEB1AF72A94003372E2 /* SoundPlayer.swift in Sources */,
+				E9215B751B068BEA00379D36 /* CameraViewController.swift in Sources */,
 				E91EB5181AF68A3100FD4317 /* SwiftyJSON.swift in Sources */,
 				E9707FDD1AF72A94003372E2 /* BlurView.swift in Sources */,
 				E9707FE71AF72A94003372E2 /* KeyboardLayoutConstraint.swift in Sources */,
