@@ -50,6 +50,7 @@
 		E9707FF41AF72A94003372E2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9707FD71AF72A94003372E2 /* TransitionManager.swift */; };
 		E9707FF51AF72A94003372E2 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9707FD81AF72A94003372E2 /* TransitionZoom.swift */; };
 		E9707FF61AF72A94003372E2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9707FD91AF72A94003372E2 /* UnwindSegue.swift */; };
+		E9B738A51B090B4600C2DB26 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B738A41B090B4600C2DB26 /* UploadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		E9707FD71AF72A94003372E2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		E9707FD81AF72A94003372E2 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		E9707FD91AF72A94003372E2 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E9B738A41B090B4600C2DB26 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				E91EB5131AF6703400FD4317 /* HttpManager.swift */,
 				E94213891AE1438C004CF905 /* ViewController.swift */,
 				E9215B741B068BEA00379D36 /* CameraViewController.swift */,
+				E9B738A41B090B4600C2DB26 /* UploadViewController.swift */,
 				E927907E1AE1E5370025DFD5 /* MapViewController.swift */,
 				E91EB5111AF66B2400FD4317 /* MapViewAnnotation.swift */,
 				E91EB50F1AF5BEB200FD4317 /* UnicornMapInfo.swift */,
@@ -341,6 +344,7 @@
 				E9707FEC1AF72A94003372E2 /* Spring.swift in Sources */,
 				E91EB5141AF6703400FD4317 /* HttpManager.swift in Sources */,
 				E9707FE51AF72A94003372E2 /* ImageLoader.swift in Sources */,
+				E9B738A51B090B4600C2DB26 /* UploadViewController.swift in Sources */,
 				E9707FE81AF72A94003372E2 /* LoadingView.swift in Sources */,
 				E9707FEE1AF72A94003372E2 /* SpringButton.swift in Sources */,
 				E9707FE11AF72A94003372E2 /* DesignableTabBarController.swift in Sources */,
