@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class UnicornMapInfo: NSObject, MKAnnotation {
-	let title: String
+	let title: String?
 	let date: String
 	let coordinate: CLLocationCoordinate2D
  
@@ -22,7 +22,7 @@ class UnicornMapInfo: NSObject, MKAnnotation {
 		super.init()
 	}
  
-	var subtitle: String {
+	var subtitle: String? {
 		return date
 	}
 }

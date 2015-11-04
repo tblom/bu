@@ -28,14 +28,14 @@ class MapViewController: UIViewController {
 				if let unicornArray = json["features"].array {
 					dispatch_async( dispatch_get_main_queue(), {
 						for unicorn in unicornArray {
-							var coordLon =  unicorn["geometry"]["coordinates"][0].double
-							var coordLat =  unicorn["geometry"]["coordinates"][1].double
+							let coordLon =  unicorn["geometry"]["coordinates"][0].double
+							let coordLat =  unicorn["geometry"]["coordinates"][1].double
 							
 							let unicornMapInfo = UnicornMapInfo ( title: unicorn["properties"]["title"].string!,
 								date: unicorn["properties"]["date"].string!, coordinate: CLLocationCoordinate2D( latitude: coordLat!, longitude: coordLon! ) )
 							
 							self.mapView.addAnnotation( unicornMapInfo );
-							println( "Added unicorn!" )
+							print( "Added unicorn!" )
 						}
 					})
 				}

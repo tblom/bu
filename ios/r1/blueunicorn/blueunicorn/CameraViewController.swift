@@ -22,7 +22,7 @@ class CameraViewController: UIViewController {
     var captureDevice : AVCaptureDevice?
     
     override func viewDidLoad() {
-        println( "View did load!" )
+        print( "View did load!" )
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,7 +38,7 @@ class CameraViewController: UIViewController {
                 if(device.position == AVCaptureDevicePosition.Front) {
                     captureDevice = device as? AVCaptureDevice
                     if captureDevice != nil {
-                        println("Capture device found")
+                        print("Capture device found")
                         beginSession()
                         break
                     }
@@ -51,20 +51,26 @@ class CameraViewController: UIViewController {
     func beginSession() {
 
         var err : NSError? = nil
-        var input = AVCaptureDeviceInput(device: captureDevice, error: &err)
+        var input: AVCaptureDeviceInput!
+        do {
+            input = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error as NSError {
+            err = error
+            input = nil
+        }
         
         if err != nil {
-            println("error: \(err?.localizedDescription)")
+            print("error: \(err?.localizedDescription)")
         }
 
         captureSession.addInput( input )
 
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraView.layer.addSublayer(previewLayer)
+        cameraView.layer.addSublayer(previewLayer!)
         
         previewLayer?.frame = cameraView.bounds;
         previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        println( "camera preview rect is \(previewLayer?.frame)")
+        print( "camera preview rect is \(previewLayer?.frame)")
         
         imageCapture = AVCaptureStillImageOutput()
         captureSession.addOutput( imageCapture )
@@ -75,15 +81,17 @@ class CameraViewController: UIViewController {
 
     @IBAction func takePicture(sender: UIButton) {
         var videoConnection : AVCaptureConnection?
-        for connection in self.imageCapture!.connections{
-            for port in connection.inputPorts!{
-                if port.mediaType == AVMediaTypeVideo{
-                    videoConnection = connection as? AVCaptureConnection
-                    break //for ports
+        if( self.imageCapture != nil ) {
+            for connection in self.imageCapture!.connections{
+                for port in connection.inputPorts!{
+                    if port.mediaType == AVMediaTypeVideo{
+                        videoConnection = connection as? AVCaptureConnection
+                        break //for ports
+                    }
                 }
-            }
-            if videoConnection != nil{
-                break //for connections
+                if videoConnection != nil{
+                    break //for connections
+                }
             }
         }
         if( videoConnection != nil ) {
@@ -93,7 +101,7 @@ class CameraViewController: UIViewController {
             
                 let imageDataJpeg = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer)
                 
-                var image: UIImage = UIImage( data: imageDataJpeg )!
+                let image: UIImage = UIImage( data: imageDataJpeg )!
                 UIImageWriteToSavedPhotosAlbum( image, nil, nil, nil )
                 
             }
