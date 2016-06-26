@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UINavigationController {
+class HomeViewController: UIViewController {
 	
 	var image: UIImage?
 		// the last image we took or chose, which the user may upload.

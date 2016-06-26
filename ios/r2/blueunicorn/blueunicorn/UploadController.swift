@@ -10,7 +10,7 @@ import UIKit
 
 class UploadController: UIViewController {
 	
-	@IBAction func UploadButton() {
+	@IBAction func cancel() {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 
